@@ -1,0 +1,28 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Suite1" verbose="1">
+    <test name="Nopackage">
+        <classes>
+            <class name="TestAllFetures">
+                <methods>
+                    <include name="m1"/>
+                    <include name="m2"/>
+                </methods>
+            </class>
+            <class name="TestAllFetures2"/>
+            <class name="TestGmt"/>
+        </classes>
+    </test>
+
+    <test name="package">
+        <packages>
+            <package name="a"/>
+        </packages>
+    </test>
+
+    <test name="service">
+        <packages>
+            <package name="service"/>
+        </packages>
+    </test>
+</suite>
