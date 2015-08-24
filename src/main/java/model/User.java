@@ -1,12 +1,30 @@
 package model;
 
-/**
- * Created by 14120295 on 2015/8/19.
- */
-public class User {
+import clover.org.apache.commons.lang3.builder.ToStringBuilder;
+
+import java.io.Serializable;
+
+public class User implements Serializable {
 
     private int age;
     private String name;
+    private String password;
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public User(int age, String name) {
+        this.age = age;
+        this.name = name;
+    }
+
+    public User() {
+    }
 
     public int getAge() {
         return age;
@@ -22,5 +40,10 @@ public class User {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return ToStringBuilder.reflectionToString(this);
     }
 }

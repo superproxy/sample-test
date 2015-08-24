@@ -1,10 +1,11 @@
-package a;
+package test;
 
 import org.testng.annotations.Test;
 
 import java.util.Random;
+
 @Test
-public class AllFeturesTest extends  BaseTest {
+public class AllFeturesTest {
 
     @Test(threadPoolSize = 3, invocationCount = 6, timeOut = 500)
     public void f1() {

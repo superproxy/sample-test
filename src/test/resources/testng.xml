@@ -1,28 +1,34 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="Suite1" verbose="1">
-    <test name="Nopackage">
-        <classes>
-            <class name="TestAllFetures">
-                <methods>
-                    <include name="m1"/>
-                    <include name="m2"/>
-                </methods>
-            </class>
-            <class name="TestAllFetures2"/>
-            <class name="TestGmt"/>
-        </classes>
-    </test>
+<suite name="sample" verbose="1">
+    <!--<test name="Nopackage">-->
+    <!--<classes>-->
+    <!--<class name="TestAllFetures">-->
+    <!--<methods>-->
+    <!--<include name="m1"/>-->
+    <!--<include name="m2"/>-->
+    <!--</methods>-->
+    <!--</class>-->
+    <!--<class name="TestAllFetures2"/>-->
+    <!--<class name="TestGmt"/>-->
+    <!--</classes>-->
+    <!--</test>-->
 
-    <test name="package">
+    <test name="test">
         <packages>
-            <package name="a"/>
+            <package name="test"/>
         </packages>
     </test>
-
+    <test name="dao">
+        <packages>
+            <package name="dao"/>
+        </packages>
+    </test>
     <test name="service">
         <packages>
             <package name="service"/>
         </packages>
     </test>
+
+
 </suite>

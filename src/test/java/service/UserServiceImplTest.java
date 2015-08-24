@@ -1,20 +1,27 @@
 package service;
 
 import model.User;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertTrue;
+import javax.annotation.Resource;
 
+import static org.testng.Assert.*;
+
+/**
+ * 测试 UserService的内部逻辑，
+ * 依赖dao部分使用mock对象
+ */
 @Test
-public class UserServiceImplTest {
+public class UserServiceImplTest extends BaseTest {
 
+    @Resource
     private UserService userService;
 
-    @BeforeMethod
-    public void setUp() throws Exception {
-        userService = new UserServiceImpl();
+    @Test
+    public void testLogin() throws Exception {
+        String userName = "";
+        String password = "";
+        assertNotNull(userService.login(userName, password));
     }
 
     @Test

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:tx="http://www.springframework.org/schema/tx" xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc.xsd">
+
+
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <!--<bean id="hibernateTemplate" class="org.springframework.orm.hibernate3.HibernateTemplate">-->
+    <!--<property name="sessionFactory" ref="sessionFactory"></property>-->
+    <!--</bean>-->
+
+    <!--<bean id="simpleJdbcTemplate" class="org.springframework.jdbc.core.simple.SimpleJdbcTemplate">-->
+    <!--<constructor-arg ref="dataSource"/>-->
+    <!--</bean>-->
+
+
+    <bean id="transactionManager"
+          class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"></property>
+    </bean>
+
+    <!--<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">-->
+    <!--<property name="driverClassName" value="org.h2.Driver" />-->
+    <!--<property name="url" value="jdbc:h2:~/myDB" />-->
+    <!--</bean>-->
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
+        <property name="url" value="jdbc:h2:mem:~/test"/>
+        <property name="username" value="sa"/>
+        <property name="password" value="sa"/>
+
+        <property name="filters">
+            <value>stat</value>
+        </property>
+
+        <property name="maxActive">
+            <value>20</value>
+        </property>
+        <property name="initialSize">
+            <value>1</value>
+        </property>
+        <property name="maxWait">
+            <value>60000</value>
+        </property>
+        <property name="minIdle">
+            <value>1</value>
+        </property>
+
+        <property name="timeBetweenEvictionRunsMillis">
+            <value>60000</value>
+        </property>
+        <property name="minEvictableIdleTimeMillis">
+            <value>300000</value>
+        </property>
+
+        <property name="validationQuery">
+            <value>SELECT 'x'</value>
+        </property>
+        <property name="testWhileIdle">
+            <value>true</value>
+        </property>
+        <property name="testOnBorrow">
+            <value>false</value>
+        </property>
+        <property name="testOnReturn">
+            <value>false</value>
+        </property>
+
+        <property name="poolPreparedStatements">
+            <value>true</value>
+        </property>
+        <property name="maxOpenPreparedStatements">
+            <value>20</value>
+        </property>
+    </bean>
+</beans>
