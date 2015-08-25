@@ -1,0 +1,12 @@
+{"books": [
+  {"book":    {
+    "id": "1234",
+    "name": "book1",
+    "price": 29
+  }},
+  {"book":    {
+    "id": "5678",
+    "name": "book2",
+    "price": 18
+  }}
+]}

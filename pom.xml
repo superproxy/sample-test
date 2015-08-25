@@ -13,7 +13,7 @@
         <sonar.java.coveragePlugin>cobertura</sonar.java.coveragePlugin>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <sonar.sourceEncoding>UTF-8</sonar.sourceEncoding>
-        <!--<sonar.junit.reportsPath>target/surefire-reports/junitreports</sonar.junit.reportsPath>-->
+        <sonar.junit.reportsPath>target/surefire-reports/junitreports</sonar.junit.reportsPath>
         <sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
         <!--<sonar.cobertura.reportPath>target/cobertura/cobertura.ser</sonar.cobertura.reportPath>-->
     </properties>

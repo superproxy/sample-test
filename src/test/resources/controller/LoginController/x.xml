@@ -1,0 +1,12 @@
+<bookes>
+    <book>
+        <id>1234</id>
+        <name>book1</name>
+        <price>29.0</price>
+    </book>
+    <book>
+        <id>5678</id>
+        <name>book2</name>
+        <price>18</price>
+    </book>
+</bookes>
