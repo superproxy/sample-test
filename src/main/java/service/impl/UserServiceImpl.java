@@ -31,7 +31,7 @@ public class UserServiceImpl implements UserService {
             return 2;
         }
 
-        return 4;
+        return 3;
     }
 
     @Override

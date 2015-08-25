@@ -33,6 +33,8 @@ public class UserServiceImplTest extends BaseTest {
     @Test
     public void testCalRank() throws Exception {
         User user = new User();
+        user.setAge(9);
+        assertEquals(userService.calRank(user), 0);
         user.setAge(10);
         assertEquals(userService.calRank(user), 1);
         user.setAge(20);
@@ -42,6 +44,6 @@ public class UserServiceImplTest extends BaseTest {
 
         //设计测试样例
         user.setAge(100);
-        assertEquals(userService.calRank(user), 4);
+        assertEquals(userService.calRank(user), 3);
     }
 }
