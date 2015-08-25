@@ -19,6 +19,8 @@
             <package name="test"/>
         </packages>
     </test>
+
+
     <test name="dao">
         <packages>
             <package name="dao"/>
@@ -35,6 +37,13 @@
                 </methods>
             </class>
         </classes>
+    </test>
+
+
+    <test name="controller">
+        <packages>
+            <package name="controller"/>
+        </packages>
     </test>
 
 
