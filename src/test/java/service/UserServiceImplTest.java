@@ -21,7 +21,7 @@ public class UserServiceImplTest extends BaseTest {
     public void testLogin() throws Exception {
         String userName = "";
         String password = "";
-        assertNotNull(userService.login(userName, password));
+        assertNotNull(userService.queryUser(userName, password));
     }
 
     @Test
@@ -35,6 +35,13 @@ public class UserServiceImplTest extends BaseTest {
         User user = new User();
         user.setAge(10);
         assertEquals(userService.calRank(user), 1);
-//        assertEquals(userService.calRank(user), 0);
+        user.setAge(20);
+        assertEquals(userService.calRank(user), 2);
+        user.setAge(30);
+        assertEquals(userService.calRank(user), 3);
+
+        //设计测试样例
+        user.setAge(100);
+        assertEquals(userService.calRank(user), 4);
     }
 }

@@ -2,6 +2,8 @@ package service;
 
 import dao.UserMapper;
 import model.User;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.testng.annotations.Test;
 
 import javax.annotation.Resource;
@@ -16,6 +18,7 @@ import static org.testng.Assert.assertNotNull;
 @Test
 //@RunWith(MockitoJUnitRunner.class)
 public class UserServiceImplWithMockTest extends MockBaseTest {
+    private static final Logger LOGGER = LoggerFactory.getLogger(UserServiceImplWithMockTest.class);
 
     @Resource
     private UserService userService;
@@ -30,11 +33,13 @@ public class UserServiceImplWithMockTest extends MockBaseTest {
     public void testLogin() throws Exception {
         String userName = "";
         String password = "";
-        // 创建对象
+
         User user = new User(5, "yxz");
-        when(userMapper.getUser(userName, password)).thenReturn(user);
-        User result = userService.login(userName, password);
-        System.out.println(result);
+        //mock
+        when(userMapper.query(userName, password)).thenReturn(user);
+        // 模拟调用
+        User result = userService.queryUser(userName, password);
+        LOGGER.debug("{}", result.toString());
         assertNotNull(result);
     }
 }

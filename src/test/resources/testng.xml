@@ -27,16 +27,16 @@
         </packages>
     </test>
     <test name="service">
-        <!--<packages>-->
-        <!--<package name="service"/>-->
-        <!--</packages>-->
-        <classes>
-            <class name="service.UserService">
-                <methods>
-                    <include name="addUser"/>
-                </methods>
-            </class>
-        </classes>
+        <packages>
+        <package name="service"/>
+        </packages>
+        <!--<classes>-->
+        <!--<class name="service.UserService">-->
+        <!--<methods>-->
+        <!--<include name="addUser"/>-->
+        <!--</methods>-->
+        <!--</class>-->
+        <!--</classes>-->
     </test>
 
 

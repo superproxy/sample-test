@@ -9,6 +9,6 @@ import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
         "classpath:dao/dao.xml",
 
 })
-public abstract class BaseTest extends AbstractTestNGSpringContextTests {
+public abstract class BaseDaoTest extends AbstractTestNGSpringContextTests {
 
 }

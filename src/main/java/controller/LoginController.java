@@ -10,7 +10,6 @@ import service.UserService;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  * 登陆服务
@@ -26,41 +25,42 @@ public class LoginController {
      *
      * @param userName
      * @param password
-     * @param answer
+     * @param validate
      * @param request
-     * @param model
      * @return
      */
     @RequestMapping("/logon")
-    public String logon(String userName, String password, String answer,
-                        String target, HttpServletRequest request,
-                        HttpServletResponse response, ModelMap model) {
+    public String logon(String userName, String password, String validate,
+                        HttpServletRequest request,
+                        HttpServletResponse response) {
+        ModelMap model = new ModelMap();
         model.addAttribute("userName", userName);
         model.addAttribute("password", password);
 
-        HttpSession session = request.getSession();
+
+        if (StringUtils.isEmpty(validate)) {
+            model.put("message", "验证码不能为空");
+            return "login";
+        }
+
         if (StringUtils.isEmpty(userName) || StringUtils.isEmpty(password)) {
             model.put("message", "用户名或密码不能为空");
-            model.put("target", target); // 跳转页面
-            return "login";
-        }
-        if (StringUtils.isEmpty(answer)) {
-            model.put("message", "验证码不能为空");
-            model.put("target", target); // 跳转页面
             return "login";
         }
 
-        User user = userService.login(userName, password);
+
+        User user = null;
+        try {
+            user = userService.queryUser(userName, password);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "error";
+        }
         if (user != null) {
-
-            if (StringUtils.isEmpty(target)) {
-                return "index";
-            }
+            return "index";
         } else {
             model.put("message", "用户名或密码不正确");
-            model.put("target", target); // 跳转页面
             return "login";
         }
-        return "";
     }
 }

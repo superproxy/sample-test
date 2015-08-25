@@ -17,7 +17,7 @@ import java.util.Map;
         "classpath:service/spring-service.xml",
         "classpath:dispatcher-servlet.xml",
 })
-public abstract class ContorllerBaseTest extends AbstractTestNGSpringContextTests {
+public abstract class BaseContorllerTest extends AbstractTestNGSpringContextTests {
 
         protected MockHttpServletRequest request;
         protected MockHttpServletResponse response;
