@@ -49,7 +49,7 @@ public class LoginController {
         }
 
 
-        User user = null;
+        User user;
         try {
             user = userService.queryUser(userName, password);
         } catch (Exception e) {

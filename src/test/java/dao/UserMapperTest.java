@@ -2,8 +2,6 @@ package dao;
 
 import model.User;
 import org.springframework.transaction.annotation.Transactional;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import javax.annotation.Resource;
@@ -25,11 +23,6 @@ public class UserMapperTest extends BaseDaoTest {
     }
 
 
-    @Test(dependsOnMethods = "testCreate")
-    public void testGetAllUsers() throws Exception {
-        assertTrue(userMapper.getAllUsers().size() == 2);
-    }
-
     @Test
     public void testGetUser() throws Exception {
         assertNotNull(userMapper.query("admin", "admin"));
@@ -41,14 +34,24 @@ public class UserMapperTest extends BaseDaoTest {
         assertEquals(userMapper.create(user), 1);
     }
 
-    @Test(dependsOnMethods = "testCreate")
+    @Test
     public void testQuery() throws Exception {
+        User user = new User("yxz", "yxz", 1);
+        assertEquals(userMapper.create(user), 1);
         assertNotNull(userMapper.query("yxz", "yxz"));
         assertEquals(userMapper.delete("yxz"), 1);
     }
 
     @Test(dependsOnMethods = "testCreate")
+    public void testGetAllUsers() throws Exception {
+        assertTrue(userMapper.getAllUsers().size() == 2);
+    }
+
+
+    @Test(dependsOnMethods = "testCreate")
     public void testDelete() throws Exception {
         assertEquals(userMapper.delete("yxz"), 1);
     }
+
+
 }
