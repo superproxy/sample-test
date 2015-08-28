@@ -18,7 +18,7 @@ public interface UserMapper {
     User queryByUserName(@Param("username")
                          String userName);
 
-    @Update("UPDATE users SET  age = #{age} WHERE name = #{name}")
+    @Update("UPDATE users SET age = #{age} WHERE name = #{name}")
     int update(User user);
 
     @Select("SELECT * FROM users")

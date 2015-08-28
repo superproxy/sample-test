@@ -1,6 +1,8 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
 <suite name="sample" verbose="1">
+
+
     <!--<test name="Nopackage">-->
     <!--<classes>-->
     <!--<class name="TestAllFetures">-->
@@ -15,6 +17,7 @@
     <!--</test>-->
 
     <test name="test">
+        <parameter name="test1" value="Tank"/>
         <packages>
             <package name="test"/>
         </packages>
@@ -28,7 +31,7 @@
     </test>
     <test name="service">
         <packages>
-        <package name="service"/>
+            <package name="service"/>
         </packages>
         <!--<classes>-->
         <!--<class name="service.UserService">-->

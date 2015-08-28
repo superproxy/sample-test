@@ -37,7 +37,6 @@ public class LoginController {
         model.addAttribute("userName", userName);
         model.addAttribute("password", password);
 
-
         if (StringUtils.isEmpty(validate)) {
             model.put("message", "验证码不能为空");
             return "login";
@@ -48,12 +47,10 @@ public class LoginController {
             return "login";
         }
 
-
         User user;
         try {
             user = userService.queryUser(userName, password);
         } catch (Exception e) {
-            e.printStackTrace();
             return "error";
         }
         if (user != null) {

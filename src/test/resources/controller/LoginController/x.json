@@ -1,12 +1,19 @@
-{"books": [
-  {"book":    {
-    "id": "1234",
-    "name": "book1",
-    "price": 29
-  }},
-  {"book":    {
-    "id": "5678",
-    "name": "book2",
-    "price": 18
-  }}
-]}
+{
+  "input": {
+    "user": {
+      "age": 9,
+      "name": "yxz",
+      "password": "yxz",
+      "rank": 0
+    },
+    "user": {
+      "age": 9,
+      "name": "yxz",
+      "password": "yxz",
+      "rank": 0
+    }
+  },
+  "out": {
+    "expected": 1
+  }
+}
