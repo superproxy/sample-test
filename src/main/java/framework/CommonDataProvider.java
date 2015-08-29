@@ -1,38 +1,52 @@
 package framework;
 
-import com.alibaba.fastjson.JSON;
+import framework.cvs.CvsDataProvider;
+import framework.json.JsonDataProvider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.annotations.DataProvider;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
-import java.util.Scanner;
+import java.util.*;
 
 public class CommonDataProvider {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(CommonDataProvider.class);
 
+    private static Map<Class, IDataProvider> dataProviderMap = new HashMap<Class, IDataProvider>();
+
+    static {
+        register(new CvsDataProvider());
+        register(new JsonDataProvider());
+    }
+
+    private static void register(IDataProvider dataProvider) {
+        dataProviderMap.put(dataProvider.getDataType(), dataProvider);
+    }
+
+
+    /**
+     * 自动读取测试文件json或者cvs中的数据
+     *
+     * @param method
+     * @return
+     */
     @DataProvider
-    public static Object[][] testData(Method method) {
+    public static Object[][] genData(Method method) {
         Annotation[] annotations = method.getAnnotations();
 
         TestObject testObject = testObject(annotations);
         LOGGER.debug("testObject:{}", testObject);
         for (Annotation annotation : annotations) {
-            if (annotation instanceof Json) {
-                LOGGER.debug("json");
-                return getObjects(method, testObject);
+            Class c = annotation.annotationType();
+            if (dataProviderMap.containsKey(c)) {
+                IDataProvider iDataProvider = dataProviderMap.get(c);
+                return iDataProvider.getObjects(method, testObject);
             }
-            if (annotation instanceof Cvs) {
-                LOGGER.debug("cvs");
-                return getObjects(method, testObject);
-            }
-        }
 
-        return getObjects(method, testObject);
+        }
+        throw new RuntimeException("no data");
     }
 
     private static TestObject testObject(Annotation[] annotations) {
@@ -44,34 +58,4 @@ public class CommonDataProvider {
         }
         return testObject;
     }
-
-    private static Object[][] getObjects(Method method, TestObject testObject) {
-        String filePath = testObject.getPath();
-        // 分析json串，然后传递给各个model
-        StringBuilder sb = new StringBuilder();
-        Scanner scanner = null;
-        try {
-            scanner = new Scanner(new FileInputStream(filePath));
-
-            while (scanner.hasNext()) {
-                sb.append(scanner.nextLine());
-            }
-
-            String s = sb.toString();
-
-//        动态创建类
-            Input input = JSON.parseObject(s, Input.class);
-            LOGGER.debug("input:{}", input);
-
-            return  new Object[][]
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-
-
-        // 构建object json格式方式
-        return new Object[0][0];
-    }
-
-
 }

@@ -1,0 +1,18 @@
+[
+    {
+       "user:  {
+            "age": 9,
+            "name": "yxz",
+            "password": "yxz",
+            "rank": 0
+        },
+       {
+            "age": 9,
+            "name": "yxz",
+            "password": "yxz",
+            "rank": 0
+        },
+        { "expected": 1}
+    }
+
+]

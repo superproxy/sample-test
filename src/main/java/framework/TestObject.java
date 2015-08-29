@@ -1,6 +1,6 @@
 package framework;
 
-import clover.org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
 
 public class TestObject {
     private String path;

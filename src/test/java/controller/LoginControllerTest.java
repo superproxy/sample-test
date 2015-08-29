@@ -17,10 +17,10 @@ public class LoginControllerTest extends BaseContorllerTest {
      * 模拟数据，桩
      * <p/>
      * //  设计良好的测试用例，测试各种情况，表格来说明相关的输入和对应的输出
-     * List<String[]> testData = new ArrayList<String[]>();
+     * List<String[]> genData = new ArrayList<String[]>();
      * <p/>
      * //        构造json串，动态构建内容
-     * //        testData.add(new String["", "", "", "", ]);
+     * //        genData.add(new String["", "", "", "", ]);
      * // 类似spring的机制，构建Model
      *
      * @throws Exception

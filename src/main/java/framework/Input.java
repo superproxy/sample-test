@@ -1,6 +1,6 @@
 package framework;
 
-import clover.org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
 import model.User;
 
 import java.io.Serializable;
