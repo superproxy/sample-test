@@ -1,4 +1,4 @@
-package framework.cvs;
+package framework.csv;
 
 import framework.IDataProvider;
 import framework.MethodUtils;
@@ -57,10 +57,37 @@ public class CsvDataProvider implements IDataProvider {
             LOGGER.debug("data:{}", data);
             Object[] objects = new Object[paramCount];
             for (int i = 0; i < paramCount; i++) {
-                objects[i] = array[i];
+                // 类型转换
+                objects[i] = convert(paraTypes[i], array[i]);
             }
             list.add(objects);
         }
         return list.toArray(new Object[0][0]);
+    }
+
+    private static Object convert(Class paraType, String s) {
+        Object object;
+        if (paraType.equals(Byte.TYPE) || paraType.equals(Byte.class)) {
+            object = Byte.valueOf(s);
+        } else if (paraType.equals(Integer.TYPE) || paraType.equals(Integer.TYPE)) {
+            object = Integer.valueOf(s);
+        } else if (paraType.equals(Short.TYPE) || paraType.equals(Short.class)) {
+            object = Short.valueOf(s);
+        } else if (paraType.equals(Long.TYPE) || paraType.equals(Long.class)) {
+            object = Long.valueOf(s);
+        } else if (paraType.equals(Float.TYPE) || paraType.equals(Float.class)) {
+            object = Float.valueOf(s);
+        } else if (paraType.equals(Double.TYPE) || paraType.equals(Double.class)) {
+            object = Double.valueOf(s);
+        } else if (paraType.equals(Boolean.TYPE) || paraType.equals(Boolean.class)) {
+            object = Boolean.valueOf(s);
+        } else if (paraType.equals(Character.TYPE) || paraType.equals(Character.class)) {
+            object = s.charAt(0);
+        } else if (paraType.equals(String.class)) {
+            object = s;
+        } else {
+            object = s;    //String
+        }
+        return object;
     }
 }

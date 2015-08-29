@@ -1,6 +1,6 @@
 package framework;
 
-import framework.cvs.CsvDataProvider;
+import framework.csv.CsvDataProvider;
 import framework.json.JsonDataProvider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -1,4 +1,4 @@
-package framework.cvs;
+package framework.csv;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
