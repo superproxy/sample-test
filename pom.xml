@@ -14,25 +14,58 @@
         <module>sample-test</module>
     </modules>
 
-    <!--<reporting>-->
-    <!--<plugins>-->
-    <!--<plugin>-->
-    <!--<groupId>org.codehaus.mojo</groupId>-->
-    <!--<artifactId>cobertura-maven-plugin</artifactId>-->
-    <!--<version>2.6</version>-->
-    <!--<configuration>-->
-    <!--<formats>-->
-    <!--<format>html</format>-->
-    <!--<format>xml</format>-->
-    <!--</formats>-->
-    <!--</configuration>-->
-    <!--</plugin>-->
-    <!--</plugins>-->
-    <!--</reporting>-->
-    <!--<pluginRepositories>-->
-    <!--<pluginRepository>-->
-    <!--<id>Codehaus repository</id>-->
-    <!--<url>http://repository.codehaus.org/</url>-->
-    <!--</pluginRepository>-->
-    <!--</pluginRepositories>-->
+    <properties>
+        <sonar.language>java</sonar.language>
+        <sonar.java.coveragePlugin>cobertura</sonar.java.coveragePlugin>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <sonar.sourceEncoding>UTF-8</sonar.sourceEncoding>
+        <sonar.junit.reportsPath>target/surefire-reports/junitreports</sonar.junit.reportsPath>
+        <sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
+        <!--文件格式有问题-->
+        <!--<sonar.cobertura.reportPath>target/cobertura/cobertura.ser</sonar.cobertura.reportPath>-->
+        <!--sonar默认的配置，cobertura需要显示说明文件格式-->
+        <sonar.cobertura.reportPath>target/site/cobertura/coverage.xml</sonar.cobertura.reportPath>
+    </properties>
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.18.1</version>
+                <configuration>
+                    <!--<parallel>methods</parallel>-->
+                    <!--<threadCount>2</threadCount>-->
+                    <suiteXmlFiles>
+                        <suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>
+                    </suiteXmlFiles>
+                </configuration>
+            </plugin>
+
+        </plugins>
+    </build>
+
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>cobertura-maven-plugin</artifactId>
+                <version>2.6</version>
+                <configuration>
+                    <formats>
+                        <format>html</format>
+                        <format>xml</format>
+                    </formats>
+                </configuration>
+            </plugin>
+        </plugins>
+    </reporting>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>Codehaus repository</id>
+            <url>http://repository.codehaus.org/</url>
+        </pluginRepository>
+    </pluginRepositories>
+
 </project>

@@ -1,7 +1,7 @@
 package framework;
 
-import framework.csv.Csv;
-import framework.json.Json;
+import framework.support.csv.Csv;
+import framework.support.json.Json;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.annotations.Test;

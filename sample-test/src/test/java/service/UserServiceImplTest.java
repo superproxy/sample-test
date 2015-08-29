@@ -1,7 +1,7 @@
 package service;
 
 import framework.CommonDataProvider;
-import framework.csv.Csv;
+import framework.support.csv.Csv;
 import model.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -38,9 +38,9 @@ public class UserServiceImplTest extends BaseTest {
 
     @Test(dataProvider = "genData", dataProviderClass = CommonDataProvider.class)
     @Csv("src/test/resources/service/UserService/testCalRank.csv")
-    public void testCalRank(long age, int expected) throws Exception {
+    public void testCalRank(String age, int expected) throws Exception {
         User user = new User();
-        user.setAge((int) age);
+        user.setAge(Integer.parseInt(age));
         assertEquals(userService.calRank(user), expected);
     }
 

@@ -1,4 +1,4 @@
-package framework.json;
+package framework.support.json;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;

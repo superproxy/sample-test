@@ -1,8 +1,8 @@
-package framework.csv;
+package framework.support.csv;
 
-import framework.IDataProvider;
+import framework.DataProvider;
 import framework.MethodUtils;
-import framework.TestObject;
+import framework.MethodContext;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class CsvDataProvider implements IDataProvider {
+public class CsvDataProvider implements DataProvider {
     @Override
     public Class getDataType() {
         return Csv.class;
@@ -24,14 +24,16 @@ public class CsvDataProvider implements IDataProvider {
     private static final Logger LOGGER = LoggerFactory.getLogger(CsvDataProvider.class);
 
     @Override
-    public Object[][] getObjects(Method method, Annotation annotation, TestObject testObject) {
+    public Object[][] getObjects(MethodContext methodContext) {
+        Annotation annotation = methodContext.getAnnotation();
+        Method method = methodContext.getMethod();
         if (annotation instanceof Csv) {
             String path = ((Csv) annotation).value();
             if (StringUtils.isNoneEmpty(path)) {
-                testObject.setPath(path);
+                methodContext.setPath(path);
             }
         }
-        String filePath = testObject.getPath();
+        String filePath = methodContext.getPath();
         try {
             return getObjects(filePath, method);
         } catch (Exception e) {

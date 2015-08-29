@@ -1,9 +1,9 @@
-package framework.json;
+package framework.support.json;
 
 import com.alibaba.fastjson.JSON;
-import framework.IDataProvider;
+import framework.DataProvider;
+import framework.MethodContext;
 import framework.MethodUtils;
-import framework.TestObject;
 import javassist.*;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class JsonDataProvider implements IDataProvider {
+public class JsonDataProvider implements DataProvider {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(JsonDataProvider.class);
 
@@ -29,15 +29,19 @@ public class JsonDataProvider implements IDataProvider {
     }
 
     @Override
-    public Object[][] getObjects(Method method, Annotation annotation, TestObject testObject) {
+    public Object[][] getObjects(MethodContext methodContext) {
+        Annotation annotation = methodContext.getAnnotation();
+        Method method = methodContext.getMethod();
+
+        //  parse selft
         if (annotation instanceof Json) {
             String path = ((Json) annotation).value();
             if (StringUtils.isNoneEmpty(path)) {
-                testObject.setPath(path);
+                methodContext.setPath(path);
             }
         }
 
-        String filePath = testObject.getPath();
+        String filePath = methodContext.getPath();
         // 分析json串，然后传递给各个model
         String s = readWholeTextFromFile(filePath);
         // 动态创建类：数据成员对应，参数传进来的类型

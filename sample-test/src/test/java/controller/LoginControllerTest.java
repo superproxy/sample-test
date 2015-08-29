@@ -1,7 +1,7 @@
 package controller;
 
 import framework.CommonDataProvider;
-import framework.csv.Csv;
+import framework.support.csv.Csv;
 import org.testng.annotations.Test;
 
 import javax.annotation.Resource;
