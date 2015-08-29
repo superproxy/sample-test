@@ -39,30 +39,8 @@ public class CommonDataProviderTest {
     @Csv
     @Path("src\\test\\resources\\controller\\LoginController\\2.csv")
     public void test4(String userName, String password, String expected) {
-             assertNotNull(userName);
-             assertNotNull(password);
-             assertNotNull(expected);
-    }
-
-
-    @Test
-    public void test() {
-        User user = new User("yxz", "yxz", 9);
-        String s = JSON.toJSONString(user);
-        LOGGER.debug("{}", s);
-        Object object = JSON.parse(s);  //  hash
-        // {"input":{"age":9,"name":"yxz","password":"yxz","rank":0}, "expected":{"1"}}
-
-
-        Input input = new Input();
-        input.setExpected(0);
-        input.setUser(user);
-        input.setUser1(user);
-        s = JSON.toJSONString(input);
-
-
-        LOGGER.debug("{}", s);
-        s = "{\"expected\":0,\"user\":{\"age\":9,\"name\":\"yxz\",\"password\":\"yxz\",\"rank\":0},\"user1\":{\"age\":9,\"name\":\"yxz\",\"password\":\"yxz\",\"rank\":0}";
-        List<Object> list = JSON.parseArray(s, new Type[]{User.class, User.class, int.class});
+        assertNotNull(userName);
+        assertNotNull(password);
+        assertNotNull(expected);
     }
 }

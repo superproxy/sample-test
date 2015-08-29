@@ -59,10 +59,9 @@ public class JsonDataProvider implements IDataProvider {
                 objects[i] = input.getClass().getMethod("get" + upperName).invoke(input);
             }
             list.add(objects);
-//            list.add(new Object[]{input.getUser(), input.getUser1(), input.getExpected()});
         }
 
-        aClass.detach();
+        aClass.detach();    //删除定义的类
         return list.toArray(new Object[0][0]);
     }
 
