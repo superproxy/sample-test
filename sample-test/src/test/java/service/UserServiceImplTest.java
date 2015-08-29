@@ -1,6 +1,5 @@
 package service;
 
-import com.alibaba.fastjson.JSON;
 import model.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -60,17 +59,7 @@ public class UserServiceImplTest extends BaseTest {
     public void testCalRank2(User user, int expected) throws Exception {
         LOGGER.debug("user:{}, expected:{}", user, expected);
         assertEquals(userService.calRank(user), expected);
-
-
     }
-
-    @Test(dataProvider = "testCalRank3Json", dataProviderClass = UserServiceImplTest.class)
-    public void testCalRank3(User user, int expected) throws Exception {
-        LOGGER.debug("user:{}, expected:{}", user, expected);
-        assertEquals(userService.calRank(user), expected);
-    }
-
-
 
     @DataProvider(name = "testCalRank2Data")
     public Object[][] testCalRank2Data(Method method) {

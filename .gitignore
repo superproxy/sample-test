@@ -1,3 +1,2 @@
-.clover
-/target
-/.idea
+.idea
+*.iml

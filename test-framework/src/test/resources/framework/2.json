@@ -1,0 +1,47 @@
+[
+    {
+        "user": {
+            "age": 9,
+            "name": "yxz",
+            "password": "yxz",
+            "rank": 0
+        },
+        "user1": {
+            "age": 9,
+            "name": "yxz",
+            "password": "yxz",
+            "rank": 0
+        },
+        "expected": 1
+    },
+    {
+        "user": {
+            "age": 9,
+            "name": "yxz",
+            "password": "yxz",
+            "rank": 0
+        },
+        "user1": {
+            "age": 9,
+            "name": "yxz",
+            "password": "yxz",
+            "rank": 0
+        },
+        "expected": 1
+    },
+    {
+        "user": {
+            "age": 9,
+            "name": "yxz",
+            "password": "yxz",
+            "rank": 0
+        },
+        "user1": {
+            "age": 9,
+            "name": "yxz",
+            "password": "yxz",
+            "rank": 0
+        },
+        "expected": 1
+    }
+]

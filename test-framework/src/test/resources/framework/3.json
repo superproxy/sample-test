@@ -1,0 +1,20 @@
+[
+    {
+        "user": {
+            "age": 9,
+            "name": "yxz",
+            "password": "yxz",
+            "rank": 0
+        },
+        "real": "1"
+    }    ,
+    {
+        "user": {
+            "age": 9,
+            "name": "yxz",
+            "password": "yxz",
+            "rank": 0
+        },
+        "real": "1"
+    }
+]

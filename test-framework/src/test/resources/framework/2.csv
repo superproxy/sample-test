@@ -1,0 +1,5 @@
+name,password,expected
+yxz,sdfjlasjflkasj,0
+yxz,sdfasdc,0
+yxz,sdjflkasjdf,0
+yxz,skdfk,0
