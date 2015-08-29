@@ -1,5 +1,7 @@
 package controller;
 
+import framework.CommonDataProvider;
+import framework.cvs.Csv;
 import org.testng.annotations.Test;
 
 import javax.annotation.Resource;
@@ -63,5 +65,11 @@ public class LoginControllerTest extends BaseContorllerTest {
         userName = "admin";
         password = "admin2";
         assertEquals(loginController.logon(userName, password, answer, request, response), "login");
+    }
+
+    @Test(dataProvider = "genData", dataProviderClass = CommonDataProvider.class)
+    @Csv("src/test/resources/controller/LoginController/testLogin.csv")
+    public void testLogin(String userName, String password, String answer, String expected) throws Exception {
+        assertEquals(loginController.logon(userName, password, answer, request, response), expected);
     }
 }

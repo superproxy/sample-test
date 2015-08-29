@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSON;
 import framework.IDataProvider;
 import framework.MethodUtils;
 import framework.TestObject;
+import framework.cvs.Csv;
 import javassist.*;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
@@ -12,6 +13,7 @@ import org.slf4j.LoggerFactory;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.lang.annotation.Annotation;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
@@ -28,7 +30,14 @@ public class JsonDataProvider implements IDataProvider {
     }
 
     @Override
-    public Object[][] getObjects(Method method, TestObject testObject) {
+    public Object[][] getObjects(Method method, Annotation annotation, TestObject testObject) {
+        if (annotation instanceof Json) {
+            String path = ((Json) annotation).value();
+            if (StringUtils.isNoneEmpty(path)) {
+                testObject.setPath(path);
+            }
+        }
+
         String filePath = testObject.getPath();
         // 分析json串，然后传递给各个model
         String s = readWholeTextFromFile(filePath);
@@ -102,6 +111,7 @@ public class JsonDataProvider implements IDataProvider {
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
+            throw new RuntimeException(e);
         }
 
         return sb.toString();

@@ -1,0 +1,7 @@
+name,password,answer,expected,备注
+admin,admin,pwd,index,正确
+,,,login,没有校验码
+,,answer,login,没有用户名
+admin2,,pwd,login,用户名不存在
+admin,,answer,login, 没有密码
+admin,admin2,pwd,login,密码错误

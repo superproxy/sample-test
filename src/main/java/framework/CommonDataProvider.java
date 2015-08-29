@@ -41,8 +41,8 @@ public class CommonDataProvider {
         for (Annotation annotation : annotations) {
             Class c = annotation.annotationType();
             if (dataProviderMap.containsKey(c)) {
-                IDataProvider iDataProvider = dataProviderMap.get(c);
-                return iDataProvider.getObjects(method, testObject);
+                IDataProvider dataProvider = dataProviderMap.get(c);
+                return dataProvider.getObjects(method, annotation, testObject);
             }
 
         }
