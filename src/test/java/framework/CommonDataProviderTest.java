@@ -1,7 +1,7 @@
 package framework;
 
 import com.alibaba.fastjson.JSON;
-import framework.cvs.Cvs;
+import framework.cvs.Csv;
 import framework.json.Json;
 import model.User;
 import org.slf4j.Logger;
@@ -36,9 +36,12 @@ public class CommonDataProviderTest {
 
 
     @Test(dataProvider = "genData", dataProviderClass = CommonDataProvider.class)
-    @Cvs
-    @Path("src\\test\\resources\\controller\\LoginController\\2.cvs")
+    @Csv
+    @Path("src\\test\\resources\\controller\\LoginController\\2.csv")
     public void test4(String userName, String password, String expected) {
+             assertNotNull(userName);
+             assertNotNull(password);
+             assertNotNull(expected);
     }
 
 

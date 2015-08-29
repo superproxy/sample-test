@@ -2,17 +2,11 @@ package framework;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-public class TestObject {
+import java.io.Serializable;
+
+public class TestObject  implements Serializable {
     private String path;
-    private String method;
 
-    public String getMethod() {
-        return method;
-    }
-
-    public void setMethod(String method) {
-        this.method = method;
-    }
 
     public String getPath() {
         return path;

@@ -1,6 +1,6 @@
 package framework;
 
-import framework.cvs.CvsDataProvider;
+import framework.cvs.CsvDataProvider;
 import framework.json.JsonDataProvider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,7 +17,7 @@ public class CommonDataProvider {
     private static Map<Class, IDataProvider> dataProviderMap = new HashMap<Class, IDataProvider>();
 
     static {
-        register(new CvsDataProvider());
+        register(new CsvDataProvider());
         register(new JsonDataProvider());
     }
 
