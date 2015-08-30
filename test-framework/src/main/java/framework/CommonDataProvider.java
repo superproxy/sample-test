@@ -20,7 +20,7 @@ public class CommonDataProvider {
         register(new JsonDataProvider());
     }
 
-    private static void register(DataProvider dataProvider) {
+    public static void register(DataProvider dataProvider) {
         dataProviderMap.put(dataProvider.getDataType(), dataProvider);
     }
 
