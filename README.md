@@ -10,7 +10,7 @@ controller service dao 单元测试和集成测试的方法<br/>
 
 ###2015/8/29
 扩展了testng dataprovider的功能<br/>
-添加cvs和json测试文件支持  <br/>
+添加csv和json测试文件支持  <br/>
 
 
 
