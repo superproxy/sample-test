@@ -25,6 +25,8 @@
         <!--<sonar.cobertura.reportPath>target/cobertura/cobertura.ser</sonar.cobertura.reportPath>-->
         <!--sonar默认的配置，cobertura需要显示说明文件格式-->
         <sonar.cobertura.reportPath>target/site/cobertura/coverage.xml</sonar.cobertura.reportPath>
+
+        <powermock.version>1.6.2</powermock.version>
     </properties>
 
     <dependencyManagement>
@@ -162,9 +164,19 @@
             <dependency>
                 <groupId>org.mockito</groupId>
                 <artifactId>mockito-all</artifactId>
-                <version>1.8.5</version>
+                <version>1.10.19</version>
             </dependency>
 
+            <dependency>
+                <groupId>org.powermock</groupId>
+                <artifactId>powermock-api-mockito</artifactId>
+                <version>${powermock.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.powermock</groupId>
+                <artifactId>powermock-module-testng</artifactId>
+                <version>${powermock.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 

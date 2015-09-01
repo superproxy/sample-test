@@ -16,7 +16,6 @@ import static org.testng.Assert.assertNotNull;
  * 依赖dao部分使用mock对象
  */
 @Test
-//@RunWith(MockitoJUnitRunner.class)
 public class UserServiceImplWithMockTest extends MockBaseTest {
     private static final Logger LOGGER = LoggerFactory.getLogger(UserServiceImplWithMockTest.class);
 

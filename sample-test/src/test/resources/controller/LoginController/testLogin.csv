@@ -1,7 +1,7 @@
-name,password,answer,expected,±¸×¢
-admin,admin,pwd,index,ÕıÈ·
-,,,login,Ã»ÓĞĞ£ÑéÂë
-,,answer,login,Ã»ÓĞÓÃ»§Ãû
-admin2,,pwd,login,ÓÃ»§Ãû²»´æÔÚ
-admin,,answer,login, Ã»ÓĞÃÜÂë
-admin,admin2,pwd,login,ÃÜÂë´íÎó
+name,password,answer,expected,å¤‡æ³¨
+admin,admin,pwd,index,æ­£ç¡®
+,,,login,æ²¡æœ‰æ ¡éªŒç 
+,,answer,login,æ²¡æœ‰ç”¨æˆ·å
+admin2,,pwd,login,ç”¨æˆ·åä¸å­˜åœ¨
+admin,,answer,login, æ²¡æœ‰å¯†ç 
+admin,admin2,pwd,login,å¯†ç é”™è¯¯
