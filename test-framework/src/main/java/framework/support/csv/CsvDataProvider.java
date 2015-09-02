@@ -71,7 +71,7 @@ public class CsvDataProvider implements DataProvider {
         Object object;
         if (paraType.equals(Byte.TYPE) || paraType.equals(Byte.class)) {
             object = Byte.valueOf(s);
-        } else if (paraType.equals(Integer.TYPE) || paraType.equals(Integer.TYPE)) {
+        } else if (paraType.equals(Integer.TYPE) || paraType.equals(Integer.class)) {
             object = Integer.valueOf(s);
         } else if (paraType.equals(Short.TYPE) || paraType.equals(Short.class)) {
             object = Short.valueOf(s);
