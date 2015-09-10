@@ -1,4 +1,4 @@
-package test;
+package test.mock;
 
 import java.io.File;
 

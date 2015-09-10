@@ -113,7 +113,6 @@ public class JsonDataProvider implements DataProvider {
                 sb.append(scanner.nextLine());
             }
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
             throw new RuntimeException(e);
         }
 

@@ -115,6 +115,21 @@
             <artifactId>mybatis-spring</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>org.unitils</groupId>
+            <artifactId>unitils-core</artifactId>
+            <version>3.4.2</version>
+            <scope>test</scope>
+        </dependency>
+
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+
         <!--<dependency>-->
         <!--<groupId>javax</groupId>-->
         <!--<artifactId>javaee-api</artifactId>-->

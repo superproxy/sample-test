@@ -1,4 +1,4 @@
-package test;
+package test.mock;
 
 public final class AFinalClass {
     public final String echoString(String s) {

@@ -1,4 +1,4 @@
-package test;
+package test.mock;
 
 import org.apache.commons.lang3.StringUtils;
 import org.powermock.core.classloader.annotations.PrepareForTest;

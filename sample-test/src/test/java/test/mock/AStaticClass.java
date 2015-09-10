@@ -1,4 +1,4 @@
-package test;
+package test.mock;
 
 public class AStaticClass {
     public static final String echoString(String s) {

@@ -1,4 +1,4 @@
-package test;
+package test.mock;
 
 
 import org.junit.Assert;
@@ -7,6 +7,8 @@ import org.powermock.api.mockito.PowerMockito;
 import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.testng.PowerMockTestCase;
 import org.testng.annotations.Test;
+import test.mock.AFinalClass;
+import test.mock.AStaticClass;
 //import org.powermock.modules.junit4.PowerMockRunner;
 
 //@RunWith(PowerMockRunner.class)
