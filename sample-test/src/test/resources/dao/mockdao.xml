@@ -5,6 +5,6 @@
 
     <!-- 被依赖的服务 -->
     <bean id="userMapper" class="org.mockito.Mockito" factory-method="mock">
-        <constructor-arg value="dao.UserMapper"/>
+        <constructor-arg value="dao.user.UserMapper"/>
     </bean>
 </beans>

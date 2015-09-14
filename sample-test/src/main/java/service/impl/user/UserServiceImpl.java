@@ -1,9 +1,9 @@
-package service.impl;
+package service.impl.user;
 
-import dao.UserMapper;
-import model.User;
+import dao.user.UserMapper;
+import model.user.User;
 import org.springframework.stereotype.Service;
-import service.UserService;
+import service.user.UserService;
 
 import javax.annotation.Resource;
 

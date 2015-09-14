@@ -1,6 +1,7 @@
-package dao;
+package dao.user;
 
-import model.User;
+import dao.BaseDaoTest;
+import model.user.User;
 import org.springframework.transaction.annotation.Transactional;
 import org.testng.annotations.Test;
 
@@ -13,6 +14,12 @@ public class UserMapperTest extends BaseDaoTest {
 
     @Resource
     private UserMapper userMapper;
+
+
+    @Test(expectedExceptions = Exception.class)
+    public void test() {
+        userMapper.create(new User("admin", "admin", 1));
+    }
 
     @Test
     @Transactional

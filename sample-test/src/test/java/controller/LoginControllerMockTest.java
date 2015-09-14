@@ -1,7 +1,7 @@
 package controller;
 
 import org.testng.annotations.Test;
-import service.UserService;
+import service.user.UserService;
 
 import javax.annotation.Resource;
 

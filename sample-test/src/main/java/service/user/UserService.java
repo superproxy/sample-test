@@ -1,6 +1,6 @@
-package service;
+package service.user;
 
-import model.User;
+import model.user.User;
 
 public interface UserService {
     User queryUser(String userName, String password) throws Exception;

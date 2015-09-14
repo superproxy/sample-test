@@ -1,6 +1,6 @@
-package controller;
+package controller.order;
 
-import model.Order;
+import model.order.Order;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;

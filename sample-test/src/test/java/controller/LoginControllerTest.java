@@ -1,7 +1,7 @@
 package controller;
 
-import framework.CommonDataProvider;
-import framework.support.csv.Csv;
+import com.github.superproxy.dataprovider.entry.testng.CommonDataProvider;
+import com.github.superproxy.dataprovider.support.csv.Csv;
 import org.testng.annotations.Test;
 
 import javax.annotation.Resource;

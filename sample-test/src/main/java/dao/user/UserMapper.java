@@ -1,10 +1,7 @@
-package dao;
+package dao.user;
 
-import model.User;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
+import model.user.User;
+import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
@@ -24,7 +21,7 @@ public interface UserMapper {
     @Select("SELECT * FROM users")
     List<User> getAllUsers();
 
-    @Select("DELETE FROM users WHERE name = #{username}")
+    @Delete("DELETE FROM users WHERE name = #{username}")
     int delete(@Param("username") String userName);
 
     @Insert("INSERT INTO users(name, password, age) VALUES(#{name}, #{password}, #{age})")

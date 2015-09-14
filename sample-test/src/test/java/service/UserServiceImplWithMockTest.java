@@ -1,10 +1,11 @@
 package service;
 
-import dao.UserMapper;
-import model.User;
+import dao.user.UserMapper;
+import model.user.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.annotations.Test;
+import service.user.UserService;
 
 import javax.annotation.Resource;
 

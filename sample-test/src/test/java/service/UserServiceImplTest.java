@@ -1,11 +1,12 @@
 package service;
 
-import framework.CommonDataProvider;
-import framework.support.csv.Csv;
-import model.User;
+import com.github.superproxy.dataprovider.entry.testng.CommonDataProvider;
+import com.github.superproxy.dataprovider.support.csv.Csv;
+import model.user.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.annotations.Test;
+import service.user.UserService;
 
 import javax.annotation.Resource;
 

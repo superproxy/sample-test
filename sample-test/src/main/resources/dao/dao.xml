@@ -26,7 +26,7 @@
 
 
     <bean id="userMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
-        <property name="mapperInterface" value="dao.UserMapper"/>
+        <property name="mapperInterface" value="dao.user.UserMapper"/>
         <property name="sqlSessionFactory" ref="sqlSessionFactory"/>
     </bean>
 
