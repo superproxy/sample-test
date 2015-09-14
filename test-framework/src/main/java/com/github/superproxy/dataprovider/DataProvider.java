@@ -1,4 +1,4 @@
-package framework;
+package com.github.superproxy.dataprovider;
 
 public interface DataProvider {
     Class getDataType();

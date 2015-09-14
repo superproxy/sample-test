@@ -1,7 +1,10 @@
-package framework;
+package com.github.superproxy.dataprovider.entry.testng;
 
-import framework.support.csv.CsvDataProvider;
-import framework.support.json.JsonDataProvider;
+import com.github.superproxy.dataprovider.DataProvider;
+import com.github.superproxy.dataprovider.MethodContext;
+import com.github.superproxy.dataprovider.Path;
+import com.github.superproxy.dataprovider.support.csv.CsvDataProvider;
+import com.github.superproxy.dataprovider.support.json.JsonDataProvider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

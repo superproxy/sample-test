@@ -1,4 +1,4 @@
-package framework.support.csv;
+package com.github.superproxy.dataprovider.support.csv;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;

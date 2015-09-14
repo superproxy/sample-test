@@ -1,9 +1,8 @@
-package framework;
+package com.github.superproxy.dataprovider;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
 
-import static java.lang.annotation.ElementType.METHOD;
 import static java.lang.annotation.ElementType.PARAMETER;
 
 
