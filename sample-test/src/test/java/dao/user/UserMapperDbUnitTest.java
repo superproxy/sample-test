@@ -17,6 +17,17 @@ public class UserMapperDbUnitTest extends BaseDaoTest {
     @Resource
     private UserMapper userMapper;
 
+    /**
+     * 运行没有初始化数据
+     *
+     * @throws Exception
+     */
+    @Test
+    public void testNotExits() throws Exception {
+        User user = userMapper.queryByUserName("admin2");
+        System.out.println(user);
+        assertNull(user);
+    }
 
     /**
      * 额外初始化数据集
@@ -47,6 +58,14 @@ public class UserMapperDbUnitTest extends BaseDaoTest {
         this.userMapper.delete("admin2");
     }
 
+
+    @Test
+    @DatabaseSetup("/dao/user/Users.xml")
+    @ExpectedDatabase("/dao/user/Users2.xml")
+    public void testInsert() throws Exception {
+        userMapper.create(new User("admin3", "admin3", 3));
+    }
+
     /**
      * datasetup 会初始化数据admin2，所以在插入数据会报主键冲突
      */
@@ -57,10 +76,4 @@ public class UserMapperDbUnitTest extends BaseDaoTest {
     }
 
 
-    @Test
-    public void testNotExits() throws Exception {
-        User user = userMapper.queryByUserName("admin2");
-        System.out.println(user);
-        assertNull(user);
-    }
 }
