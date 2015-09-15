@@ -1,7 +1,3 @@
-/**
- * SUNING APPLIANCE CHAINS.
- * Copyright (c) 2012-2012 All Rights Reserved.
- */
 package dao;
 
 import org.testng.annotations.Test;

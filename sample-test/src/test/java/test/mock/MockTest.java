@@ -11,8 +11,10 @@ import org.testng.annotations.Test;
 
 import java.io.File;
 import java.util.List;
+import java.util.Map;
 
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
 import static org.powermock.api.mockito.PowerMockito.mockStatic;
 import static org.powermock.api.mockito.PowerMockito.when;
 import static org.testng.Assert.assertEquals;
@@ -28,6 +30,16 @@ public class MockTest {
         List list = mock(List.class);
         when(list.get(0)).thenReturn(1);
         assertEquals(list.get(0), 1);
+    }
+
+    @Test
+    public void testVoid() {
+        MyInterface myInterface = mock(MyInterface.class);
+        try {
+             myInterface.put(new Object());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Mock
