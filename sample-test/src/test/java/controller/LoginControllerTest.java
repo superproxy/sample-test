@@ -1,7 +1,7 @@
 package controller;
 
-import com.github.superproxy.dataprovider.entry.testng.CommonDataProvider;
-import com.github.superproxy.dataprovider.support.csv.Csv;
+import com.github.superproxy.testdataprovider.entry.testng.CommonDataProvider;
+import com.github.superproxy.testdataprovider.support.csv.Csv;
 import org.testng.annotations.Test;
 
 import javax.annotation.Resource;
@@ -68,7 +68,7 @@ public class LoginControllerTest extends BaseContorllerTest {
     }
 
     @Test(dataProvider = "genData", dataProviderClass = CommonDataProvider.class)
-    @Csv("src/test/resources/controller/LoginController/testLogin.csv")
+    @Csv("/LoginController/testLogin.csv")
     public void testLogin(String userName, String password, String answer, String expected) throws Exception {
         assertEquals(loginController.logon(userName, password, answer, request, response), expected);
     }

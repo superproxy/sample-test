@@ -10,7 +10,6 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>test-framework</module>
         <module>sample-test</module>
     </modules>
 

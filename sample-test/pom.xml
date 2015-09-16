@@ -29,9 +29,9 @@
     <dependencies>
 
         <dependency>
-            <groupId>sample</groupId>
-            <artifactId>test-framework</artifactId>
-            <version>1.1-SNAPSHOT</version>
+            <groupId>com.github.superproxy</groupId>
+            <artifactId>test-data-provider</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
             <scope>test</scope>
         </dependency>
 
@@ -175,11 +175,6 @@
         <dependency>
             <groupId>org.freemarker</groupId>
             <artifactId>freemarker</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>fastjson</artifactId>
         </dependency>
 
         <dependency>

@@ -1,7 +1,7 @@
 package service;
 
-import com.github.superproxy.dataprovider.entry.testng.CommonDataProvider;
-import com.github.superproxy.dataprovider.support.csv.Csv;
+import com.github.superproxy.testdataprovider.entry.testng.CommonDataProvider;
+import com.github.superproxy.testdataprovider.support.csv.Csv;
 import model.user.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -38,7 +38,7 @@ public class UserServiceImplTest extends BaseTest {
     }
 
     @Test(dataProvider = "genData", dataProviderClass = CommonDataProvider.class)
-    @Csv("src/test/resources/service/UserService/testCalRank.csv")
+    @Csv("/service/UserService/testCalRank.csv")
     public void testCalRank(String age, int expected) throws Exception {
         User user = new User();
         user.setAge(Integer.parseInt(age));
