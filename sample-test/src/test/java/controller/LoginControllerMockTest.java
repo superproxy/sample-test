@@ -1,5 +1,6 @@
 package controller;
 
+import org.springframework.ui.ExtendedModelMap;
 import org.testng.annotations.Test;
 import service.user.UserService;
 
@@ -31,6 +32,6 @@ public class LoginControllerMockTest extends BaseContorllerMockTest {
         String password = "admin";
         String answer = "pwd";
         when(userService.queryUser(userName, password)).thenThrow(new RuntimeException("dao access error"));
-        assertEquals(loginController.logon(userName, password, answer, request, response), "error");
+        assertEquals(loginController.logon(userName, password, answer, request, response, new ExtendedModelMap()), "error");
     }
 }

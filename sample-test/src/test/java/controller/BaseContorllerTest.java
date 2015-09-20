@@ -19,18 +19,30 @@ import java.util.Map;
 })
 public abstract class BaseContorllerTest extends AbstractTestNGSpringContextTests {
 
-        protected MockHttpServletRequest request;
-        protected MockHttpServletResponse response;
+    protected MockHttpServletRequest request;
+    protected MockHttpServletResponse response;
 
-        protected Map<Object, Object> sessionMap;
-        protected MockHttpSession session;
+    protected Map<Object, Object> sessionMap;
+    protected MockHttpSession session;
 
-        @BeforeMethod
-        public void beforeMethod() {
-                request = new MockHttpServletRequest();
-                response = new MockHttpServletResponse();
-                sessionMap = new Hashtable<Object, Object>();
-                session = new MockHttpSession();
-                request.setSession(session);
-        }
+    @BeforeMethod
+    public void beforeMethod() {
+        request = mockRequest();
+        response = mockResponse() ;
+        sessionMap = new Hashtable<Object, Object>();
+        session = mockSession();
+        request.setSession(session);
+    }
+
+    protected MockHttpServletRequest mockRequest() {
+        return new MockHttpServletRequest();
+    }
+
+    protected MockHttpServletResponse mockResponse() {
+        return new MockHttpServletResponse();
+    }
+
+    protected MockHttpSession mockSession() {
+        return new MockHttpSession();
+    }
 }

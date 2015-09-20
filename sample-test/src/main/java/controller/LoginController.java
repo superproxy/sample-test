@@ -6,6 +6,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 import service.user.UserService;
 
 import javax.servlet.http.HttpServletRequest;
@@ -20,6 +23,20 @@ public class LoginController {
     @Autowired
     private UserService userService;
 
+
+    /**
+     * 登录页面
+     *
+     * @return
+     */
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    public String login() {
+        return "login";
+    }
+
+
+
+
     /**
      * 登录验证
      *
@@ -32,18 +49,16 @@ public class LoginController {
     @RequestMapping("/logon")
     public String logon(String userName, String password, String validate,
                         HttpServletRequest request,
-                        HttpServletResponse response) {
-        ModelMap model = new ModelMap();
+                        HttpServletResponse response, ModelMap model) {
         model.addAttribute("userName", userName);
-        model.addAttribute("password", password);
-
+//        model.addAttribute("password", password);
         if (StringUtils.isEmpty(validate)) {
-            model.put("message", "验证码不能为空");
+            model.addAttribute("message", "验证码不能为空");
             return "login";
         }
 
         if (StringUtils.isEmpty(userName) || StringUtils.isEmpty(password)) {
-            model.put("message", "用户名或密码不能为空");
+            model.addAttribute("message", "用户名或密码不能为空");
             return "login";
         }
 
@@ -56,7 +71,7 @@ public class LoginController {
         if (user != null) {
             return "index";
         } else {
-            model.put("message", "用户名或密码不正确");
+            model.addAttribute("message", "用户名或密码不正确");
             return "login";
         }
     }
