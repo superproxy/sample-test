@@ -1,5 +1,6 @@
 package app;
 
+import controller.SimpleController;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.test.SpringApplicationConfiguration;
@@ -11,7 +12,7 @@ import service.BaseTest;
 @EnableAutoConfiguration
 //@ImportXml("classpath:sbeans.xml")
 //@SpringApplicationConfiguration(classes = {HomeController.class, LoginController.class})
-@SpringApplicationConfiguration(classes = {HomeController.class})
+@SpringApplicationConfiguration(classes = {SimpleController.class})
 @WebAppConfiguration
 @WebIntegrationTest
 @Test
