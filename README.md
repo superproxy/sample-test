@@ -1,5 +1,7 @@
 # sample-test
 
+[![Join the chat at https://gitter.im/superproxy/sample-test](https://badges.gitter.im/superproxy/sample-test.svg)](https://gitter.im/superproxy/sample-test?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 ##单元测试示例<br/>
 
 testng和单元覆盖工具集成 <br/>
