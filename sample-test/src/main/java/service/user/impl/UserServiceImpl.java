@@ -13,7 +13,7 @@ import service.user.UserService;
 
 import javax.annotation.Resource;
 
-@CacheConfig(cacheNames = {"user"})
+@CacheConfig(cacheNames = {"test"})
 @Service
 public class UserServiceImpl implements UserService, CommonCacheManager<User> {
 
@@ -58,23 +58,23 @@ public class UserServiceImpl implements UserService, CommonCacheManager<User> {
     }
 
     @Override
-    @CacheEvict(value = "user", key = "'user_'+#user.name")
+    @CacheEvict(value = "test", key = "'user_'+#user.name")
     public boolean updateUser(User user) {
         return userMapper.update(user) > 0;
     }
 
     @Override
     public void removeCache(String key) {
-        cacheManager.getCache("user").evict(key);
+        cacheManager.getCache("test").evict(key);
     }
 
     @Override
     public void addCache(String key, User object) {
-        cacheManager.getCache("user").put(key, object);
+        cacheManager.getCache("test").put(key, object);
     }
 
     @Override
     public User getCache(String key) {
-        return (User) cacheManager.getCache("user").get(key);
+        return (User) cacheManager.getCache("test").get(key);
     }
 }

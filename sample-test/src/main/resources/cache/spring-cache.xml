@@ -11,7 +11,7 @@
         <property name="caches">
             <set>
                 <bean class="org.springframework.cache.concurrent.ConcurrentMapCacheFactoryBean">
-                    <property name="name" value="user"/>
+                    <property name="name" value="test"/>
                 </bean>
             </set>
         </property>

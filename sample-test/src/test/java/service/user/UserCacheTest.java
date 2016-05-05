@@ -21,7 +21,7 @@ public class UserCacheTest extends BaseTest {
         System.out.println("query admin first end");
         Assert.assertNotNull(userService.queryUser("admin"));
         System.out.println("query admin send end");
-        Assert.assertEquals(cacheManager.getCache("user").get("user_admin").get(), user);
+        Assert.assertEquals(cacheManager.getCache("test").get("user_admin").get(), user);
     }
 
     @Test
