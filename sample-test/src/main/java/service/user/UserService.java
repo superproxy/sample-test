@@ -5,7 +5,10 @@ import model.user.User;
 public interface UserService {
     User queryUser(String userName, String password) throws Exception;
 
+    User queryUser(String userName);
+
     boolean addUser(User user);
+    boolean updateUser(User user);
 
     /**
      * 计算用户等级

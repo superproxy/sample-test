@@ -1,4 +1,4 @@
-package service;
+package service.user;
 
 import com.github.superproxy.testdataprovider.entry.testng.CommonDataProvider;
 import com.github.superproxy.testdataprovider.support.csv.Csv;
@@ -6,7 +6,7 @@ import model.user.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.annotations.Test;
-import service.user.UserService;
+import service.BaseTest;
 
 import javax.annotation.Resource;
 

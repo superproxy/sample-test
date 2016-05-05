@@ -1,7 +1,8 @@
-package controller;
+package controller.login;
 
 import com.github.superproxy.testdataprovider.entry.testng.CommonDataProvider;
 import com.github.superproxy.testdataprovider.support.csv.Csv;
+import controller.BaseContorllerTest;
 import org.springframework.test.web.ModelAndViewAssert;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;

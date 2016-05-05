@@ -1,11 +1,11 @@
-package service;
+package service.user;
 
 import dao.user.UserMapper;
 import model.user.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.annotations.Test;
-import service.user.UserService;
+import service.MockBaseTest;
 
 import javax.annotation.Resource;
 

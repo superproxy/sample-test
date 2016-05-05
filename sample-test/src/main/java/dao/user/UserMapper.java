@@ -10,7 +10,6 @@ public interface UserMapper {
     User query(@Param("username")
                String userName, @Param("password")
                String password);
-
     @Select("SELECT * FROM users WHERE name = #{username}")
     User queryByUserName(@Param("username")
                          String userName);

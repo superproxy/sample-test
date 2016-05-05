@@ -1,4 +1,4 @@
-package controller;
+package controller.login;
 
 import model.user.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,8 +7,6 @@ import org.springframework.ui.ModelMap;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
 import service.user.UserService;
 
 import javax.servlet.http.HttpServletRequest;
@@ -34,9 +32,6 @@ public class LoginController {
         return "login";
     }
 
-
-
-
     /**
      * 登录验证
      *
@@ -51,7 +46,6 @@ public class LoginController {
                         HttpServletRequest request,
                         HttpServletResponse response, ModelMap model) {
         model.addAttribute("userName", userName);
-//        model.addAttribute("password", password);
         if (StringUtils.isEmpty(validate)) {
             model.addAttribute("message", "验证码不能为空");
             return "login";

@@ -11,7 +11,7 @@ import java.util.Hashtable;
 import java.util.Map;
 
 @ContextConfiguration(locations = {
-        "classpath:dao/datasource.xml",
+        "classpath:dao/datasource-prod.xml",
         "classpath:dao/init-data.xml",
         "classpath:dao/dao.xml",
         "classpath:service/spring-service.xml",

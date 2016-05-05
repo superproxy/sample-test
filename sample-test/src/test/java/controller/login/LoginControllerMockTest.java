@@ -1,5 +1,6 @@
-package controller;
+package controller.login;
 
+import controller.BaseContorllerMockTest;
 import org.springframework.ui.ExtendedModelMap;
 import org.testng.annotations.Test;
 import service.user.UserService;

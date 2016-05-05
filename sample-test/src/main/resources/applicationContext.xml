@@ -4,7 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
 
     <import resource="classpath:dao/dao.xml"/>
-    <import resource="classpath:dao/datasource.xml"/>
+    <import resource="classpath:dao/datasource-prod.xml"/>
     <import resource="classpath:dao/init-data.xml"/>
     <import resource="classpath:service/spring-service.xml"/>
 </beans>
